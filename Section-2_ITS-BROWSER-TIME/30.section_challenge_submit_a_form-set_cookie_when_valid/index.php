@@ -10,14 +10,15 @@
  * Remember your data sanitization! Test your work.
  */
 
-// $cookieSetter = setcookie('randomNum', rand(1,10), time()+3600);
 
 session_start();
 session_regenerate_id();
 $_SESSION['randomNum'] = rand(1,10);
 $randomNum  = (int) $_SESSION['randomNum'];
 $number     = (int) $_POST['number'];
-
+// if (empty($_COOKIE['randomNum'])){
+//     // $cookieSetter = setcookie('randomNum', rand(1,10), time()+3600);
+// }
     if (!empty($number) && array_key_exists('number', $_POST)) {
 
         // $randomNum  = (int) $_COOKIE['randomNum'];  
